@@ -1,5 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
-<PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <WasmMainJSPath>main.js</WasmMainJSPath>
@@ -11,14 +11,20 @@
     <TrimMode>full</TrimMode>
     <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
     <InvariantGlobalization>true</InvariantGlobalization>
-</PropertyGroup>
 
-<PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <RunAOTCompilation>true</RunAOTCompilation>
-</PropertyGroup>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <WasmExtraFilesToDeploy Include="index.html" />
+    <WasmExtraFilesToDeploy Include="main.js" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="screepsdotnet.api" Version="1.1.1" />
+    <PackageReference Include="screepsdotnet.bundler" Version="1.1.1" />
+  </ItemGroup>
 
-<ItemGroup>
-  <PackageReference Include="ScreepsDotNet.API" Version="1.1.1" />
-  <PackageReference Include="ScreepsDotNet.Bundler" Version="1.1.1" />
-</ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+      <RunAOTCompilation>true</RunAOTCompilation>
+  </PropertyGroup>
 </Project>
