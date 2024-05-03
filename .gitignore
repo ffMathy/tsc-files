@@ -1,9 +1,2 @@
-# Node.js
-node_modules
-
-# Logs
-*.log
-*.log.*
-
-# Mac
-.DS_Store
+bin/
+obj/
