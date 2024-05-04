@@ -1,1 +1,1 @@
-// stub main.js file - this is not used
+// stub js file - this is not used

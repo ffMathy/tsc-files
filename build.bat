@@ -1,1 +1,1 @@
-dotnet watch publish -c Debug
+dotnet watch publish -c Release
